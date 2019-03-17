@@ -1,0 +1,20 @@
+def solution(phone_book):
+    min_value = 20
+    head = 0
+    index = 0
+    for idx, i in enumerate(phone_book):
+        length = len(i)
+        if min_value > length:
+            min_value = length
+            head = i
+            index = idx
+    phone_book.pop(idx)
+    for i in phone_book:
+        check = 0
+        for j in range(0, min_value):
+            print(i)
+            if head[j] != i[j]:
+                check = 1
+        if check == 0:
+            return False
+    return True
